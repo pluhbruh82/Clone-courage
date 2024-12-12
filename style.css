@@ -1,0 +1,233 @@
+/* the 100vh and 100vw set the size of the body to fill the viewport (screen) */
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400..900&display=swap");
+body {
+  height: 100vh;
+  width: 100vw;
+  display: block;
+  margin: 0;
+  background-color: #0f0f0f;
+}
+/* build your layout */
+.top-row {
+  height: 33.3%;
+  width: 100%;
+  display: flex;
+}
+p {
+  font-size: 1em;
+  font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.mid-row {
+  height: calc(33.3% - 4px);
+  width: calc(100% - 4px);
+  color: white;
+  border: 2px solid white; /* White solid border */
+  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8); /* Creates a glowing effect */
+}
+
+.clickable1:hover {
+  transform: perspective(500px) rotateY(10deg) rotateX(-5deg);
+  filter: brightness(100%) drop-shadow(2px 8px 5px rgba(0, 0, 0, 0.3));
+}
+clickable1:hover {
+  cursor: pointer;
+  filter: brightness(110%);
+  box-shadow: 0 0 10px 3px rgba(229, 233, 8, 0.8); /* Cyan glow */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Soft shadow on hover */
+  border: 2px solid #00f; /* Blue outline on hover */
+}
+.clickable1 {
+  filter: brightness(85%) drop-shadow(2px 8px 3px);
+}
+.clickable1:active {
+  transform: scale(0.98) rotateY(-5deg) rotateX(5deg);
+  filter: brightness(90%) drop-shadow(0px 0px 3px rgba(241, 140, 7, 0.5));
+}
+.clickable1:active {
+  filter: brightness(90%);
+  box-shadow: 0 0 6px 2px rgba(241, 187, 7, 0.5); /* Slight glow on click */
+}
+/* BUTTON 2 - Morphing Shape & 3D Perspective Effect with Blue Outline */
+.clickable2 {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, filter 0.3s ease, border-radius 0.3s ease,
+    border 0.3s ease;
+  border: 2px solid transparent; /* Set initial border to transparent */
+}
+
+/* Hover Effect: Morph shape + 3D tilt + Blue Outline */
+.clickable2:hover {
+  transform: perspective(500px) rotateX(-10deg) rotateY(-10deg); /* 3D tilt */
+  filter: brightness(1.1); /* Slightly brighter on hover */
+  border-radius: 15% 20% 25% 30%; /* Morph shape to give a more dynamic look */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Soft shadow on hover */
+  border: 2px solid #00f; /* Blue outline on hover */
+}
+
+/* Click Effect: Simulate pressing (depth illusion) + Blue Outline */
+.clickable2:active {
+  transform: perspective(500px) scale(0.95) rotateX(-15deg) rotateY(-15deg); /* Shrink and rotate on click */
+  filter: brightness(0.9); /* Slight darken when clicked */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Soft press shadow */
+  border: 2px solid #00f; /* Maintain the blue outline on click */
+}
+
+/* Adding smooth transition for the morphing effect */
+.clickable2 img {
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+/* Optional: Adding a subtle scale-up effect when hovering */
+.clickable2:hover img {
+  transform: scale(1.1); /* Slightly zoom in */
+}
+
+.clickable3 {
+  position: relative;
+  overflow: hidden;
+}
+
+.clickable3::after {
+  content: "";
+  position: absolute;
+  background: rgba(0, 0, 255, 0.3); /* Blue ripple */
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 0.6s ease-out;
+  pointer-events: none;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(10);
+    opacity: 0;
+  }
+}
+
+.clickable3:active::after {
+  width: 200%;
+  height: 200%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+/* Bounce Effect for Button 3 on Hover */
+.clickable3:hover {
+  transform: scale(1.1) calc(100% - 4px);
+  filter: brightness(120%);
+  box-shadow: 0 0 15px rgba(226, 226, 230, 0.8); /* Blue glow */
+}
+
+.clickable3:active {
+  transform: scale(0.98);
+  filter: brightness(80%);
+}
+
+.square {
+  height: 100%;
+  width: 33.3%;
+}
+
+.Tbox {
+  height: 100%;
+  width: 50%;
+}
+.bottom-row {
+  height: 33.3%;
+  width: 100%;
+  display: flex;
+}
+.bottom-row2 {
+  height: 100%;
+  width: 40%;
+  display: flex;
+}
+.bottom-row3 {
+  height: 100%;
+  width: 60%;
+  display: flex;
+}
+
+.translucent {
+  opacity: 0.5;
+}
+/* this will make ALL <img> elements at most 100% of their PARENT! */
+img {
+  max-height: 100%;
+  max-width: 100%;
+}
+/* this class goes on the PARENT div of the image! */
+.center-content {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.translucent {
+  opacity: 0;
+}
+
+/* colors to see divs */
+.purple {
+  background-color: #523d64;
+}
+.green {
+  background-color: #85e21f;
+}
+.orange {
+  background-color: #da6339;
+}
+.gold {
+  background-color: #d3a047;
+}
+.yellow {
+  background-color: #ffeca7;
+}
+.black {
+  background-color: #000000;
+}
+.slate {
+  background-color: #1e171f;
+}
+.dark-grey {
+  background-color: #3a3b3c;
+}
+.light-grey {
+  background-color: #d3d3d3;
+}
+.blue {
+  background-color: #0a0dbb;
+}
+.red {
+  background-color: #d80f0f;
+}
+.back {
+  background-color: #0f0f0f;
+}
+
+@media only screen and (max-width: 700px) {
+  p {
+    font-size: 1.25em;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .bottom-row {
+    height: 33.3%;
+    width: 100%;
+    display: block;
+  }
+  .bottom-row2 {
+    height: 50%;
+    width: 100%;
+  }
+  .bottom-row3 {
+    height: 50%;
+    width: 100%;
+  }
+  p {
+    font-size: 1em;
+  }
+}
